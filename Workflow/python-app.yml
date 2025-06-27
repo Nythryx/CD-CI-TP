@@ -26,3 +26,12 @@ jobs:
       - name: Run linter
         run: |
           pylint simple_math.py test_simple_math.py
+
+            docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t tp-github-actions .
+
